@@ -1,0 +1,12 @@
+**/log/
+**/id_rsa
+**/inventories/
+**/build/  
+**/script/  
+**/stuff/  
+**/.terraform
+**/*tfstate
+**/*tfstate*
+**/state/
+**/etc/
+**/.terraform.lock.*
