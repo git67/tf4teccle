@@ -26,7 +26,7 @@ aws ec2 describe-regions --profile <your-profile-name>
 
 #### - You have to pull these repository
 ```
-git clone --branch feature/1_step https://github.com/git67/tf3terraform.git ./1_step
+git clone --branch feature/1_step https://github.com/git67/tf4teccle.git ./1_step
 cd ./1_step
 ```
 
