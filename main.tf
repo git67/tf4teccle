@@ -1,31 +1,3 @@
-variable "aws_cli_profile" {
-  description = "aws profile"
-  default     = "devops"
-}
-
-variable "aws_region" {
-  description = "aws region"
-  default     = "eu-central-1"
-}
-
-variable "namespace" {
-  description = "part of naming schema"
-  default     = "teccle"
-}
-variable "cidr_vpc" {
-  description = "cidr vpc"
-  default     = "10.1.0.0/16"
-}
-variable "cidr_subnet" {
-  description = "cidr subnet"
-  default     = "10.1.0.0/24"
-}
-variable "availability_zone" {
-  description = "av-zone subnet"
-  default     = "eu-central-1a"
-}
-
-
 # aws
 provider "aws" {
   profile = var.aws_cli_profile
@@ -54,11 +26,3 @@ resource "aws_subnet" "subnet_public_devops" {
   }
 }
 
-output "vpc" {
-  description = "vpc id"
-  value       = aws_vpc.vpc_devops.id
-}
-
-output "vpc-info" {
-  value = join(" : ", [aws_vpc.vpc_devops.id, aws_vpc.vpc_devops.tags_all["Name"]])
-}
