@@ -1,12 +1,3 @@
-# version/local backend
-#
-terraform {
-  required_version = ">= 1.2"
-  backend "local" {
-    path = "state/terraform.tfstate"
-  }
-}
-
 # aws
 provider "aws" {
   profile = var.aws_cli_profile
