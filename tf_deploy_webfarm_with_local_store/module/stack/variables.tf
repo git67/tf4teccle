@@ -48,7 +48,7 @@ variable "ec2" {
     "ebs_vol_type"   = "NONE"
   }
   validation {
-    condition     = var.ec2["ebs_vol_size"] > 0 
+    condition     = var.ec2["ebs_vol_size"] > 0
     error_message = "the ebs_vol_size have to larger then 0"
   }
 }
