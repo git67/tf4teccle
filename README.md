@@ -26,8 +26,8 @@ aws ec2 describe-regions --profile <your-profile-name>
 
 #### - You have to pull these repository
 ```
-git clone --branch feature/3_step https://github.com/git67/tf4teccle.git ./3_step
-cd ./3_step
+git clone --branch feature/4_step https://github.com/git67/tf4teccle.git ./4_step
+cd ./4_step
 ```
 
 ###### - Place your profile name into main.tf:
