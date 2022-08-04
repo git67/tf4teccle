@@ -1,7 +1,15 @@
-## terraform
+## AWS Scope (default)   
+#### - Create one vpc over 3 availability zones with on subnet per av 
+#### - Create 1 or more ec2 instance in every subnet
+#### - Add one ebs-device to every ec2 instance
+#### - Add cloud watch alarms to every ec2 instance
+#### - Allow public access through tcp/22, tcp/8080
+#### - Configure ELB over all instances (http:8080)
+#### - Add ansible hook for configuring webservice 
 
-#### The following steps are necessary:
-#### - Install terrafom && aws-cli && ssh-keygen (if needed)
+
+## The following steps are necessary:
+#### - Install terrafom && aws-cli 
 #### - Check terraform && aws-cli
 
 ```
@@ -14,50 +22,56 @@ aws --version
 ls ~/.aws
 ```
 
-#### - List configured profile
+#### - List configured aws-cli profile
 ```
 aws configure list --profile <your-profile-name>
 ```
 
-#### - Probe connection to aws api
+#### - Probe connection to aws cloud
 ```
 aws ec2 describe-regions --profile <your-profile-name>
 ```
 
-#### - You have to pull these repository
+#### - You have to pull the repository from github
 ```
-git clone --branch feature/4_step https://github.com/git67/tf4teccle.git ./4_step
-cd ./4_step
+git clone --branch feature/example_aws https://github.com/git67/terraform.git ./example_aws
 ```
 
-###### - Place your profile name into main.tf:
+#### - Create or copy the needed ssh-keys, follow the instructions in ./example_aws/files/keys/README.md
 ```
-...
-  default = "<your aws cli profile>"
-...
+cd ./example_aws
 ```
-#### - Initialisation of terraform environment
+
+#### - Set aws profile data in variables.tf, if it is not the default profile
+#### - Customize your stack environment (count of ec2 instanzes, cidr's, ...) or leave the default's
+```
+vim variables.tf
+```
+
+#### -Run the initialisation of terraform environment
 ```
 terraform init
 ```
 
-#### - Probe your terraform code
+#### - Probe your terraform code now
 ```
 terraform validate
 terraform plan
 ```
 
-#### - Run terraform without any interaction
+#### - Run terraform without any interaction, build your environment@aws
 ```
 terraform apply -auto-approve
 ```
 
-#### - Lookup your environment by aws cli
+#### - or run terraform without any interaction and some customization to build your environment@aws
+#### - for example create 5 instances per subnet into the stack
 ```
-aws ec2 describe-vpcs --vpc-ids <you get the id from terraform output> --profile <your awc cli profile>
+terraform apply -var 'ec2["instance_count"]=5' -auto-approve
+
 ```
 
-#### - Remove your deployment
+#### - Destroy your environment@aws
 ```
 terraform destroy -auto-approve
 ```
