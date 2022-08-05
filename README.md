@@ -30,9 +30,10 @@ git clone --branch feature/4_step https://github.com/git67/tf4teccle.git ./4_ste
 cd ./4_step
 ```
 
-###### - Place your profile name into main.tf:
+###### - Place your profile name into var_aws.tf:
 ```
 ...
+  description = "aws profile"
   default = "<your aws cli profile>"
 ...
 ```
