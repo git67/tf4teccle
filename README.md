@@ -26,8 +26,8 @@ aws ec2 describe-regions --profile <your-profile-name>
 
 #### - You have to pull these repository
 ```
-git clone --branch feature/1_step https://github.com/git67/tf4teccle.git ./1_step
-cd ./1_step
+git clone --branch features/example_datasource https://github.com/git67/tf4teccle.git ./example_datasource
+cd ./example_datasource
 ```
 
 ###### - Place your profile name into main.tf:
@@ -52,7 +52,7 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-#### - Lookup your environment by aws cli
+#### - Lookup your Environment by aws cli
 ```
 aws ec2 describe-vpcs --vpc-ids <you get the id from terraform output> --profile <your awc cli profile>
 ```
