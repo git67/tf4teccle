@@ -34,7 +34,7 @@ aws ec2 describe-regions --profile <your-profile-name>
 
 #### - You have to pull the repository from github
 ```
-git clone --branch feature/example_aws https://github.com/git67/terraform.git ./example_aws
+git clone --branch feature/example_aws https://github.com/git67/tf4teccle.git ./example_aws
 ```
 
 #### - Create or copy the needed ssh-keys, follow the instructions in ./example_aws/files/keys/README.md
