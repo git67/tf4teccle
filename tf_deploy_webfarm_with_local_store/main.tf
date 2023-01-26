@@ -26,7 +26,7 @@ module "stack" {
   ec2 = {
     "instance_ami"   = "ami-0a02ee601d742e89f"
     "instance_type"  = "t2.nano"
-    "instance_count" = 6
+    "instance_count" = 2
     "ebs_device"     = "/dev/sdb"
     "ebs_vol_size"   = 1
     "ebs_vol_type"   = "gp2"
